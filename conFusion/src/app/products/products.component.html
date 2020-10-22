@@ -1,0 +1,94 @@
+<div style="text-align:center">
+<p>
+  <mat-toolbar>
+    <span>MY SPORTS STORE </span>
+  </mat-toolbar>
+</p>
+
+
+
+
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu
+      </mat-icon>
+    </button>
+    <span>home &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>
+    <span class="example-spacer"></span>
+    <div>
+    <nav>
+     
+      <button mat- raised-button  type="submit" colour="primary"  (click)="display( )">
+        <a routerLink="/cart" routerLinkActive="active">
+        <mat-icon (click)="display( )" >shopping_cart </mat-icon>
+      </a> 
+        </button>
+       
+    
+    </nav>
+  </div>
+    
+  </mat-toolbar>
+</p>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+   <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef > image  </th>
+    <td mat-cell  *matCellDef="let product"> 
+      <div>
+        <nav>
+          <a routerLink="/detail" routerLinkActive="active"> 
+      <img matListAvatar  style="width: 15em; height: 20em;" src={{product.position}} (click) = "description(product)" >
+  
+  </a> 
+</nav>
+</div>
+     
+  </ng-container>
+
+ <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name  
+    </th>
+    
+    <td mat-cell *matCellDef="let product" >
+      
+      <h2> {{product.name}}</h2> 
+   
+    </td>
+  
+  </ng-container>
+
+   <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> price </th>
+    <div>
+      <nav>
+        <a routerLink="/detail" routerLinkActive="active"> 
+    <td mat-cell *matCellDef="let product"> <h3 (click) = "description(product)">$ {{product.price}}</h3> </td>
+  </a> 
+</nav>
+</div>
+  </ng-container>
+
+ <ng-container matColumnDef="addtocart">
+    <th mat-header-cell *matHeaderCellDef> addtocart</th>
+    <td mat-cell *matCellDef="let product">
+     
+      <button mat- raised-button colour="primary" (click)="addCart(product)">
+             <mat-icon>
+                add_shopping_cart
+             </mat-icon>
+           </button>
+       </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+ 
+
+
+
+</div>

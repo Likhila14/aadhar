@@ -1,0 +1,32 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .icolor{
+   color: skyblue;
+  }
+ 
+  .mat-toolbar.mat-primary {
+    background: skyblue;
+    color: white;
+    
+  }
+
+  .btn {
+    display:block;
+    height: 40px;
+    width: 60px;
+    border-radius: 100%;
+    border: 1px solid white;
+    background: lightgreen;
+  }
+  .example-label {
+    display: table-cell;
+    font-size: 0mm;
+    font-weight: bolder;
+    font-style: italic;
+    margin-left: 20px;
+    min-width: 50px;
+  }
+  nav a.active{
+    color: blue;
+  }

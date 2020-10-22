@@ -1,0 +1,54 @@
+
+
+
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu &nbsp; &nbsp; &nbsp;
+      </mat-icon>
+    </button>
+    <span>&nbsp; &nbsp; &nbsp; MyCart &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer">  &nbsp; &nbsp; &nbsp; &nbsp; {{count}} items &nbsp; &nbsp; &nbsp; &nbsp; $ {{sum }}</span>
+    
+  </mat-toolbar>
+</p>
+
+
+<table mat-table [dataSource]="Source" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="position">
+   <th mat-header-cell *matHeaderCellDef> image  </th>
+   <td mat-cell *matCellDef="let product"> 
+      
+     <img matListAvatar  style="width: 15em; height: 20em;" src={{product.position}}  >
+   </td>
+    
+ </ng-container>
+
+<ng-container matColumnDef="name">
+   <th mat-header-cell *matHeaderCellDef> Name  
+   </th>
+   <td mat-cell *matCellDef="let product"><h2>{{product.name}}</h2> 
+    </td>
+ </ng-container>
+
+  <ng-container matColumnDef="price">
+   <th mat-header-cell *matHeaderCellDef> price </th>
+   <td mat-cell *matCellDef="let product"> <h3>${{product.price}}</h3> </td>
+ </ng-container>
+
+<ng-container matColumnDef="addtocart">
+   <th mat-header-cell *matHeaderCellDef> addtocart</th>
+   <td mat-cell *matCellDef="let product">
+     <button mat- raised-button  type="submit" colour="primary" (click)="remove(product)">
+           remove
+          </button>
+      </td>
+ </ng-container>
+
+ <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+ <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
